@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  {{>head}}
+  <body>
+    <div class="main-content">
+      {{>header}}
+      
+      <div class="berita-container">
+        <h2>📰 Berita Terkini</h2>
+        <p class="berita-desc">Dapatkan berita terbaru dari seluruh dunia </p>
+
+        <!-- Form Pencarian Berita -->
+        <div class="search-news">
+          <input type="text" id="beritaKeywords" placeholder="Cari berita (contoh: teknologi, olahraga, politik...)" class="berita-input">
+          <button id="searchBeritaBtn" class="berita-btn">Cari Berita</button>
+          <button id="loadDefaultBerita" class="berita-btn secondary">Berita Terpopuler</button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingBerita" class="loading" style="display: none;">
+          <div class="loading-spinner"></div>
+          <p>Sedang memuat berita...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="beritaError" class="error-message" style="display: none;"></div>
+
+        <!-- Container untuk menampilkan berita -->
+        <div id="beritaResults" class="berita-results">
+          <!-- Berita akan ditampilkan di sini oleh JavaScript -->
+        </div>
+
+        <!-- Info tentang kata kunci yang bisa dicoba -->
+        <div class="keywords-info">
+          <p><strong>Kata kunci populer:</strong> teknologi, olahraga, politik, kesehatan, bisnis, pendidikan, hiburan</p>
+        </div>
+      </div>
+    </div>
+
+    {{>footer}}
+    <script src="/js/berita.js"></script>
+  </body>
+</html>

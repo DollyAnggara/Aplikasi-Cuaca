@@ -1,0 +1,1232 @@
+/* ========================== */
+/* ======= VARIABEL CSS ===== */
+/* ========================== */
+:root {
+  --primary-color: #4361ee;
+  --primary-light: #4895ef;
+  --primary-dark: #3a0ca3;
+  --secondary-color: #f72585;
+  --accent-color: #4cc9f0;
+  --text-dark: #2b2d42;
+  --text-light: #8d99ae;
+  --bg-light: #f8f9fa;
+  --bg-white: #ffffff;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.12);
+  --border-radius: 12px;
+  --transition: all 0.3s ease;
+}
+
+/* ========================== */
+/* ======= BASE STYLES ====== */
+/* ========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-dark);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-light);
+  line-height: 1.6;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 20px 0;
+}
+
+h1 {
+  color: var(--primary-dark);
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h2 {
+  color: var(--primary-dark);
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+}
+
+h3 {
+  color: var(--primary-color);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+/* ========================== */
+/* ======= HEADER & NAV ===== */
+/* ========================== */
+header {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+header a {
+  color: var(--text-light);
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: var(--transition);
+}
+
+header a:hover {
+  color: var(--primary-color);
+}
+
+header a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition);
+}
+
+header a:hover::after {
+  width: 100%;
+}
+
+/* ========================== */
+/* ======== FOOTER ========== */
+/* ========================== */
+footer {
+  color: var(--text-light);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* ========================== */
+/* ======= HOME PAGE ======== */
+/* ========================== */
+
+.weather-card {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(30deg);
+}
+
+/* Styling untuk tanggal - WARNA PUTIH */
+.date {
+  color: white !important;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* Styling untuk location info */
+.location-info {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.location-info h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+/* Styling untuk weather details */
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+.temperature i {
+  font-size: 1.8rem;
+  opacity: 0.8;
+  color: white;
+}
+
+.temp-unit {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.weather-condition {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.weather-condition i {
+  font-size: 1.8rem;
+  color: white;
+}
+
+/* Styling untuk additional info */
+.additional-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.info-item i {
+  color: white;
+  opacity: 0.8;
+}
+
+/* Pastikan semua teks dalam weather-info berwarna putih */
+.weather-info {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.weather-info * {
+  color: white;
+}
+
+.weather-info {
+  display: none;
+}
+
+.weather-info.show {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================== */
+/* ======= PROFILE CARD ===== */
+/* ========================== */
+.profile-container {
+  margin: 1.5rem 0;
+}
+
+.profile-card {
+  background-color: var(--bg-white);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 2.5rem;
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.profile-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+}
+
+.profile {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile .portrait {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  margin: 0 auto 1rem;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile h2 {
+  color: var(--text-dark);
+  margin: 0.5rem 0;
+}
+
+.profile .subtitle {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+.about, .education, .skills, .contact {
+  margin-bottom: 2rem;
+}
+
+.about h3, .education h3, .skills h3, .contact h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-light);
+  padding-bottom: 0.5rem;
+}
+
+.education ul {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.education li {
+  background: #f8f9fa;
+  margin-bottom: 0.8rem;
+  padding: 1rem 1.2rem;
+  border-left: 4px solid var(--primary-color);
+  border-radius: 6px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.education li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(67, 97, 238, 0.1), transparent);
+  transition: var(--transition);
+}
+
+.education li:hover::before {
+  left: 100%;
+}
+
+.education li:hover {
+  background: #e9ecef;
+  transform: translateX(5px);
+}
+
+.skill-icons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.skill {
+  background: #f8f9fa;
+  padding: 1.2rem 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+  transition: var(--transition);
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+}
+
+.skill:hover i {
+  color: white;
+  transform: scale(1.2);
+}
+
+.skill i {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.skill span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  font-weight: 500;
+}
+
+.contact a:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+/* ========================== */
+/* ======= FAQ STYLE ======== */
+/* ========================== */
+.faq-container {
+  margin-top: 1.5rem;
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.faq-title {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+}
+
+.faq-desc {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e9ecef;
+  padding: 1rem 0;
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-question {
+  background-color: #f8f9fa;
+  border: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: left;
+  width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.faq-question:hover {
+  background-color: #eaf4ff;
+  color: var(--primary-color);
+}
+
+.faq-question.active {
+  background-color: #dbeafe;
+  color: var(--primary-dark);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.faq-question .arrow {
+  transition: var(--transition);
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.faq-question.active .arrow {
+  transform: rotate(90deg);
+  color: var(--primary-color);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 1.2rem;
+  background-color: #fdfdfd;
+  border-left: 3px solid transparent;
+  border-radius: 0 0 8px 8px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  transition: var(--transition);
+}
+
+.faq-answer.show {
+  border-left: 3px solid var(--primary-color);
+  padding: 1rem 1.2rem;
+  max-height: none;
+  overflow: visible;
+}
+
+.faq-answer img.faq-image {
+  margin: 1rem 0;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e9ecef;
+  box-sizing: border-box; 
+}
+
+.faq-image-wrapper {
+  margin: 1rem 0;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  overflow-x: auto; 
+  text-align: center;
+}
+
+.faq-image-wrapper img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto;
+}
+
+.faq-image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  font-style: italic;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    padding: 1rem;
+    margin-left: -5px;
+    margin-right: -5px;
+  }
+  
+  .faq-answer {
+    padding: 0 0.5rem;
+  }
+  
+  .faq-answer.show {
+    padding: 1rem 0.5rem;
+  }
+  
+  .faq-answer img.faq-image {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .faq-image-wrapper {
+    margin: 1rem -0.5rem;
+    padding: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-image-wrapper {
+    margin: 1rem -1rem;
+  }
+  
+  .faq-image-wrapper img {
+    width: 100%;
+  }
+}
+
+/* ========================== */
+/* ======= BERITA STYLE ===== */
+/* ========================== */
+.berita-container {
+  margin-top: 1.5rem;
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+}
+
+.berita-desc {
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.search-news {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.berita-input {
+  flex: 1;
+  min-width: 250px;
+  border: 2px solid #e9ecef;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.berita-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+}
+
+.berita-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.berita-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.berita-btn.secondary {
+  background: #6c757d;
+}
+
+.berita-btn.secondary:hover {
+  background: #545b62;
+}
+
+.loading {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-light);
+}
+
+.loading-spinner {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error-message {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid #f5c6cb;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.berita-results {
+  margin-top: 1.5rem;
+}
+
+.berita-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.berita-header h3 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.berita-header p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+}
+
+.berita-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.berita-card {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  border: 1px solid #e9ecef;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.berita-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.berita-image {
+  height: 180px;
+  overflow: hidden;
+  background: #e9ecef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.berita-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.berita-card:hover .berita-image img {
+  transform: scale(1.05);
+}
+
+.no-image {
+  font-size: 3rem;
+  color: #adb5bd;
+}
+
+.berita-content {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.berita-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.berita-deskripsi {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.berita-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+.berita-sumber {
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.berita-tanggal {
+  color: var(--text-light);
+}
+
+.berita-kategori {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.berita-category, .berita-country {
+  background: #e9ecef;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #495057;
+}
+
+.berita-link {
+  display: inline-block;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  align-self: flex-start;
+}
+
+.berita-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.no-berita {
+  text-align: center;
+  padding: 2.5rem;
+  color: var(--text-light);
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.keywords-info {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #e7f3ff;
+  border-radius: 8px;
+  border-left: 4px solid var(--primary-color);
+}
+
+.keywords-info p {
+  margin: 0;
+  color: var(--text-dark);
+  font-size: 0.9rem;
+}
+
+.keywords-info strong {
+  color: var(--primary-color);
+}
+
+/* ========================== */
+/* ===== RESPONSIVE DESIGN == */
+/* ========================== */
+@media (max-width: 768px) {
+  body {
+    padding: 0 15px;
+  }
+  
+  .main-content {
+    padding: 15px 0;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  .home-container,
+  .profile-card,
+  .faq-container,
+  .berita-container {
+    padding: 1.5rem;
+  }
+  
+  .berita-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-news {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .berita-input {
+    min-width: auto;
+  }
+  
+  .home-form {
+    flex-direction: column;
+  }
+  
+  .skill-icons {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+/* ========================== */
+/* ======= ANIMATIONS ======= */
+/* ========================== */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================== */
+/* ======= HOME PAGE ======== */
+/* ========================== */
+.home-container {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  text-align: center;
+  transition: var(--transition);
+  margin-bottom: 2rem;
+}
+
+.home-container:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+.home-container h1 {
+  color: var(--primary-dark);
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: none;
+  -webkit-text-fill-color: var(--primary-dark);
+}
+
+.home-container h1 i {
+  color: var(--primary-color);
+}
+
+.subtitle {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+.weather-card {
+  background: linear-gradient(135deg, var(--primary-light), var(--primary-color));
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  transform: rotate(30deg);
+}
+
+.weather-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.weather-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+.input-group {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  z-index: 1;
+}
+
+.weather-input {
+  width: 100%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: var(--transition);
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text-dark);
+  position: relative;
+  z-index: 2;
+}
+
+.weather-input:focus {
+  outline: none;
+  border-color: white;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  background: white;
+}
+
+.weather-btn {
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.weather-btn:hover {
+  background: #e01a6f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.weather-info {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  backdrop-filter: blur(10px);
+  position: relative;
+  z-index: 2;
+}
+
+.location-info {
+  margin-bottom: 1.5rem;
+}
+
+.location-info h2 {
+  color: white;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.date {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.temperature {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.temperature i {
+  font-size: 1.8rem;
+  opacity: 0.8;
+}
+
+.temp-unit {
+  font-size: 1.5rem;
+}
+
+.weather-condition {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.weather-condition i {
+  font-size: 1.8rem;
+}
+
+.additional-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.features {
+  margin-top: 2rem;
+}
+
+.features h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--primary-dark);
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-item {
+  background: var(--bg-white);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.feature-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-item i {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.feature-item h4 {
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.feature-item p {
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+/* Status default untuk info cuaca (tersembunyi) */
+.weather-info {
+  display: none;
+}
+
+.weather-info.show {
+  display: block;
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* ========================== */
+/* ===== RESPONSIVE DESIGN == */
+/* ========================== */
+@media (max-width: 768px) {
+  .weather-form {
+    flex-direction: column;
+  }
+  
+  .input-group {
+    min-width: auto;
+  }
+  
+  .weather-details {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .additional-info {
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  {{>head}}
+  <body>
+    <div class="main-content">
+      {{>header}}
+      
+      <div class="home-container">
+        <h1><i class="fas fa-cloud-sun"></i> Aplikasi Cek Cuaca</h1>
+        <p class="subtitle">Gunakan aplikasi ini untuk mengecek informasi cuaca!</p>
+        
+        <div class="weather-card">
+          <div class="weather-icon">
+            <i class="fas fa-search-location"></i>
+          </div>
+          
+          <form class="weather-form">
+            <div class="input-group">
+              <i class="fas fa-map-marker-alt input-icon"></i>
+              <input type="text" class="weather-input" placeholder="Masukkan nama kota atau lokasi" required>
+            </div>
+            <button type="submit" class="weather-btn">
+              <i class="fas fa-search"></i> Cari Lokasi
+            </button>
+          </form>
+          
+          <div class="weather-info">
+            <div class="location-info">
+              <h2><i class="fas fa-map-pin"></i> <span id="location-name">Jakarta</span></h2>
+              <p class="date" id="current-date">Senin, 12 Juni 2023</p>
+            </div>
+            
+            <div class="weather-details">
+              <div class="temperature">
+                <i class="fas fa-thermometer-half"></i>
+                <span id="temp-value">28</span>
+                <span class="temp-unit">°C</span>
+              </div>
+              
+              <div class="weather-condition">
+                <i class="fas fa-cloud" id="condition-icon"></i>
+                <span id="condition-text">Berawan</span>
+              </div>
+            </div>
+            
+            <div class="additional-info">
+              <div class="info-item">
+                <i class="fas fa-tint"></i>
+                <span>Kelembaban: <span id="humidity-value">75%</span></span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-wind"></i>
+                <span>Kecepatan Angin: <span id="wind-value">12 km/jam</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="features">
+          <h3>Fitur Unggulan</h3>
+          <div class="feature-grid">
+            <div class="feature-item">
+              <i class="fas fa-bolt"></i>
+              <h4>Real-time</h4>
+              <p>Informasi cuaca terkini dan akurat</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-globe-asia"></i>
+              <h4>Lokasi Lengkap</h4>
+              <p>Cakupan seluruh kota di Indonesia</p>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-mobile-alt"></i>
+              <h4>Responsif</h4>
+              <p>Akses mudah dari perangkat apapun</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{>footer}}
+    <script src="/js/app.js"></script>
+  </body>
+</html>
