@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  {{>head}}
+  <body>
+    <div class="main-content">
+      {{>header}}
+      <h2 class="faq-title">FAQ (Frequently Asked Questions)</h2>
+      <p class="faq-desc">
+        Halaman ini berisi beberapa pertanyaan umum terkait aplikasi.
+      </p>
+
+      <div class="faq-container">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>a. Halaman ini digunakan untuk apa?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Halaman ini digunakan sebagai pusat bantuan yang berisi
+              pertanyaan umum beserta jawabannya agar pengguna lebih mudah
+              memahami cara kerja aplikasi.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>b. Apa itu API?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              API (Application Programming Interface) adalah antarmuka yang
+              memungkinkan dua sistem atau aplikasi saling berkomunikasi dan
+              bertukar data secara terstruktur.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>c. API apa yang digunakan dalam aplikasi ini?</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Aplikasi ini menggunakan API cuaca publik seperti
+              <i>OpenWeatherMap</i> untuk mengambil data kondisi cuaca secara
+              real-time.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>d. Salah satu pola arsitektur API adalah</span>
+            <span class="arrow">▶</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Aplikasi ini menggunakan pola arsitektur
+              <b>RESTful API</b>, yaitu gaya arsitektur yang memanfaatkan metode
+              HTTP seperti <i>GET</i> dan <i>POST</i> untuk mengirim dan menerima
+              data dalam format JSON.
+            </p>
+            <img
+              src="/img/RESTful.jpg"
+              alt="Contoh RESTful API"
+              class="faq-image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{>footer}}
+    <script src="/js/faq.js"></script>
+  </body>
+</html>
